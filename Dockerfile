@@ -2,11 +2,11 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get -y install python python-pip apache2
 
-ADD ./pydash /var/www/apps/pydash
+ADD ./code/pydash /var/www/apps/pydash
 
-CP .pydash.conf /etc/apache2/sites-enabled
+ADD pydash.conf /etc/apache2/sites-enabled/pydash.conf
 
-WORKDIR /var/www/apps/pydash
+WORKDIR /var/www/apps/pydash/
 
 RUN pip install -r requirements.txt
 
